@@ -20,8 +20,8 @@ export const BlogsStoreModel = types
   .views((self)=>({
     getDataBlog:(text : string)=>{
       return self.blog.filter(item => item.author.toLocaleLowerCase().includes(text.toLocaleLowerCase
-        ().trim())) && self.blog.filter(item => item.title.toLocaleLowerCase().includes(text.toLocaleLowerCase
-          ().trim()))
+        ().trim()) || item.title.toLocaleLowerCase().includes(text.toLocaleLowerCase
+          ().trim())) 
     }
   })) // eslint-disable-line @typescript-eslint/no-unused-vars
   .actions((self) => ({

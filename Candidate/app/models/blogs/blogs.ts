@@ -8,7 +8,7 @@ export const BlogsModel = types
   .props({ 
     id: types.identifierNumber,
     title: types.maybeNull(types.string),
-    subtitle : types.maybeNull(types.string),
+    subTitle : types.maybeNull(types.string),
     photo : types.maybeNull(types.string),
     content: types.maybeNull(types.string),
     author: types.maybeNull(types.string),

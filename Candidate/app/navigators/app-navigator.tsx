@@ -8,7 +8,7 @@ import React from "react"
 import { useColorScheme } from "react-native"
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { WelcomeScreen, DemoScreen, DemoListScreen, LoadingScreen, BlogDetailScreen } from "../screens"
+import { WelcomeScreen, DemoScreen, DemoListScreen, LoadingScreen, BlogDetailScreen, CandidateDetailScreen } from "../screens"
 import { navigationRef, useBackButtonHandler } from "./navigation-utilities"
 
 /**
@@ -29,6 +29,7 @@ export type NavigatorParamList = {
   candidate: undefined
   loading : undefined
   blogDetail:undefined
+  candidateDetail:undefined
   // 🔥 Your screens go here
 }
 
@@ -48,6 +49,7 @@ const AppStack = () => {
       <Stack.Screen name="demo" component={DemoScreen} />
       <Stack.Screen name="loading" component={LoadingScreen} />
       <Stack.Screen name="blogDetail" component={BlogDetailScreen} />
+      <Stack.Screen name="candidateDetail" component={CandidateDetailScreen} />
       {/** 🔥 Your screens go here */}
     </Stack.Navigator>
   )

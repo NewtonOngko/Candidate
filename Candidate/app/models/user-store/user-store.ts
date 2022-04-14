@@ -28,6 +28,7 @@ export const UserStoreModel = types
       appStore.handleState("isLoading", true)
       const candidateApi = new CandidateApi(self.environment.api)
       const resultUser = await candidateApi.getUser()
+
       appStore.handleState("isLoading", false)
 
       return resultUser

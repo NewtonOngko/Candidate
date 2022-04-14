@@ -84,10 +84,10 @@ export const DemoListScreen: FC<StackScreenProps<NavigatorParamList, "candidate"
     useEffect(() => {
       candidateStore.getCandidate().then(()=>{
         setList(candidateStore.getData(''))
-        console.log('can',candidateStore.getData(''))
+        // console.log('can',candidateStore.getData(''))
       })
       userStore.getUser().then((item)=>{
-        console.log('userssss',item)
+        // console.log('userssss',item)
       })
       blogStore.getBlog().then(()=>{
         setListBlog(blogStore.getDataBlog(''))
@@ -118,7 +118,7 @@ export const DemoListScreen: FC<StackScreenProps<NavigatorParamList, "candidate"
                     data={[...listBlog]}
                     renderItem={({ item }) => (
                       <TouchableOpacity
-                      onPress={()=> navigation.navigate('blogDetail',item)}
+                      onPress={()=> navigation.push('blogDetail',item)}
                       >
                         <View>
                           <View style={LIST_CONTAINER}>
@@ -137,7 +137,7 @@ export const DemoListScreen: FC<StackScreenProps<NavigatorParamList, "candidate"
                 data={[...list]}
                 keyExtractor={(item) => String(item.id)}
                 renderItem={({ item }) => (
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={()=>navigation.navigate('candidateDetail',item)}>
                     <View>
                       <View style={LIST_CONTAINER}>
                         <Image source={{ uri: item.photo }} style={IMAGE} />
